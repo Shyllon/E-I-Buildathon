@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "VendorGuard backend service",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
