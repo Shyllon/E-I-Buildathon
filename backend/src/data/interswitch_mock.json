@@ -1,0 +1,18 @@
+[
+  { "transaction_ref": "ID-0396", "amount": 44500, "status": "SUCCESS", "sender_phone": "2348069953753", "is_chargeback": false },
+  { "transaction_ref": "ID-4713", "amount": 13300, "status": "SUCCESS", "sender_phone": "2347069532809", "is_chargeback": false },
+  { "transaction_ref": "ID-2918", "amount": 52500, "status": "FAILED", "sender_phone": "2348051659683", "is_chargeback": false },
+  { "transaction_ref": "ID-1871", "amount": 22400, "status": "SUCCESS", "sender_phone": "2347039411225", "is_chargeback": false },
+  { "transaction_ref": "ID-0028", "amount": 24800, "status": "FAILED", "sender_phone": "2347013932146", "is_chargeback": false },
+  { "transaction_ref": "ID-1275", "amount": 46300, "status": "FAILED", "sender_phone": "2348027525270", "is_chargeback": false },
+  { "transaction_ref": "ID-4997", "amount": 12800, "status": "FAILED", "sender_phone": "2348068516527", "is_chargeback": false },
+  { "transaction_ref": "ID-4153", "amount": 97900, "status": "SUCCESS", "sender_phone": "2347018446457", "is_chargeback": false },
+  { "transaction_ref": "ID-0192", "amount": 30100, "status": "SUCCESS", "sender_phone": "2347033513666", "is_chargeback": false },
+  { "transaction_ref": "ID-1074", "amount": 45200, "status": "SUCCESS", "sender_phone": "2348101145929", "is_chargeback": false },
+  { "transaction_ref": "ID-1107", "amount": 22300, "status": "FAILED", "sender_phone": "2348146359425", "is_chargeback": true },
+  { "transaction_ref": "ID-2341", "amount": 23800, "status": "SUCCESS", "sender_phone": "2348142472570", "is_chargeback": false },
+  { "transaction_ref": "ID-4303", "amount": 40200, "status": "FAILED", "sender_phone": "2348146118243", "is_chargeback": false },
+  { "transaction_ref": "ID-0207", "amount": 7400, "status": "FAILED", "sender_phone": "2348052588247", "is_chargeback": true },
+  { "transaction_ref": "ID-0851", "amount": 29300, "status": "SUCCESS", "sender_phone": "2348063376607", "is_chargeback": false },
+  { "transaction_ref": "ID-4961", "amount": 13800, "status": "SUCCESS", "sender_phone": "2348113196009", "is_chargeback": false }
+]
