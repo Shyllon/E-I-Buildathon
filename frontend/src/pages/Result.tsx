@@ -7,8 +7,6 @@ export const Result = () => {
 	const { state } = useLocation();
 	const navigate = useNavigate();
 
-	console.log(state);
-
 	if (!state) {
 		return <p className='p-4'>No result found</p>;
 	}

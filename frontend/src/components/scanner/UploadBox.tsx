@@ -35,30 +35,32 @@ export const UploadBox = ({ onFile }: { onFile: (file: File | null) => void }) =
 				onChange={handleImageChange}
 				className='size-[0.1px] opacity-0 overflow-hidden absolute -z-1'
 			/>
-			<label
-				htmlFor='image'
-				className='border-2 border-dashed border-border rounded-xl p-20 text-center cursor-pointer hover:border-primary transition text-sm text-primary-text/70
-      '
-			>
-				{!preview && 'Upload proof of payment'}
-				{preview && (
-					<div className='place-self-center'>
-						<h3 className='place-content-start'>Preview:</h3>
-						<img alt='uploaded preview' width='150px' src={preview} />
+			{!preview && (
+				<label
+					htmlFor='image'
+					className=' border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-primary transition cursor-pointer text-sm text-gray-400'
+				>
+					Upload proof of payment
+				</label>
+			)}
+			{preview && (
+				<div className='border-2 border-dashed border-border rounded-xl p-6  text-center hover:border-primary transition'>
+					<div className='place-self-center '>
+						<img alt='uploaded preview' className='place-self-center' width={'250px'} src={preview} />
 						<br />
-
-						<div className='flex gap-3 items-center'>
-							<Button className='place-self-start' onClick={() => (setSelectedImage(null), onFile(null))}>
+						<div className='flex items-center gap-4'>
+							<label
+								htmlFor='image'
+								className='bg-primary px-4 hover:bg-primary-hover w-fit place-items-center cursor-pointer disabled:cursor-auto font-medium py-3 rounded-lg transition disabled:opacity-50 m text-primary-text'
+							>
 								Change Image
-							</Button>
-							<Button className='place-self-start' onClick={() => (setSelectedImage(null), onFile(null))}>
-								Remove Image
-							</Button>
+							</label>
+
+							<Button onClick={() => (setSelectedImage(null), onFile(null))}>Remove Image</Button>
 						</div>
 					</div>
-				)}
-			</label>
-			<div></div>
+				</div>
+			)}
 		</>
 	);
 };

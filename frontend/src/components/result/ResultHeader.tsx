@@ -5,6 +5,7 @@ export const ResultHeader = ({ result }: any) => {
 	let state = 'VERIFIED';
 	if (isFake) state = 'FAKE';
 	else if (isRisk) state = 'RISK';
+	console.log(result);
 
 	const config: Record<string, { text: string; color: string }> = {
 		VERIFIED: {

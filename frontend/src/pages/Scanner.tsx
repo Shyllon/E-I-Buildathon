@@ -13,6 +13,10 @@ export const Scanner = () => {
 	const [loading, setLoading] = useState<boolean>(false);
 
 	const handleSubmit = async () => {
+		const formatAmount = (amount: number) => {
+			amount.toString();
+		};
+
 		if (!file || !amount) return;
 		setLoading(true);
 		try {
@@ -43,7 +47,7 @@ export const Scanner = () => {
 	return (
 		<section className='min-h-screen place-content-center pt-33 pb-20 px-20 '>
 			<div className='flex justify-center flex-col gap-6'>
-				<h1 className='text-lg font-heading text-start'>Upload Receipt</h1>
+				<h1 className='text-2xl font-bold font-heading text-start'>Upload Receipt</h1>
 
 				<UploadBox onFile={setFile} />
 
@@ -63,18 +67,15 @@ export const Scanner = () => {
 							placeholder='0.00'
 							className='border-none bg-transparent px-0 w-full border border-border rounded-lg py-3 text-sm focus:outline-none '
 						/>
-						{/* px-4
-							focus:ring-2
-							bg-surface */}
 					</div>
 				</div>
 				<div className='flex items-center w-full justify-center	'>
 					<Button
 						onClick={
-							handleSubmit
-							// () => {
-							// 	navigate('/result', { state: 'FAKE' });
-							// }
+							// handleSubmit
+							() => {
+								navigate('/result', { state: { flags: 'ALERT_MISMATCH' } });
+							}
 						}
 						disabled={!file || !amount || loading}
 					>
