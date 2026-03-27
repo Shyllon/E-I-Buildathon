@@ -70,17 +70,14 @@ export const Scanner = () => {
 					</div>
 				</div>
 				<div className='flex items-center w-full justify-center	'>
-					<Button
-						onClick={
-							// handleSubmit
-							() => {
-								navigate('/result', { state: { flags: 'ALERT_MISMATCH' } });
-							}
-						}
-						disabled={!file || !amount || loading}
-					>
-						{loading ? 'Processing' : 'Scan Transaction'}
-					</Button>
+				<div className='flex items-center w-full justify-center '>
+                    <Button
+                        onClick={handleSubmit}
+                        disabled={!file || !amount || loading}
+                    >
+                        {loading ? 'Processing...' : 'Scan Transaction'}
+                    </Button>
+                </div>			
 				</div>
 			</div>
 		</section>
