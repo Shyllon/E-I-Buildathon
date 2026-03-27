@@ -22,7 +22,7 @@ Technical Stack
 - *Infrastructure:* Vercel (Frontend) & Railway (Backend).
 
 How to Run & Test
-1. *Clone the Repo:* `git clone [REPO_URL]`
+1. *Clone the Repo:* `git clone https://github.com/Shyllon/E-I-Buildathon.git`
 2. *Install Dependencies:* `npm install`
 3. *Environment Variables:*
    - Create a `.env` file in the frontend.
