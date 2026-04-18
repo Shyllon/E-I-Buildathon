@@ -47,23 +47,6 @@ VendorGuard AI provides:
 - **RESTful API Architecture**  
   Scalable and modular backend services  
 
-## 🏗️ System Architecture
-Client (Mobile/Web)
-│
-▼
-Backend API (Node.js + Express)
-│
-├── OCR Processing Layer
-│
-├── Fraud Detection Engine
-│ ├── Session ID Validation
-│ └── Replay Detection Logic
-│
-▼
-Database (Supabase - PostgreSQL)
-│
-└── Row-Level Security (RLS)
-
 ## 🛠️ Tech Stack
 
 - **Backend:** Node.js, Express  
