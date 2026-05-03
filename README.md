@@ -1,118 +1,60 @@
-# 🛡️ VendorGuard AI  
-**Real-Time Fraud Detection System for Receipt Verification**
+VendorGuard AI 
 
-VendorGuard AI is a sophisticated security layer designed to protect merchants from receipt manipulation and financial fraud. By combining *AI-driven OCR*, *Replay Attack Protection*, and *Dynamic Risk Scoring*, we provide instant verification for digital and physical transaction receipts.
+Real-time backend fraud detection system for validating payment receipts using OCR, session verification, and replay attack prevention.
 
-Built during the **Interswitch x Enyata Buildathon 2026**, the system leverages OCR intelligence and transaction validation logic to identify fraudulent payment confirmations before they cause financial loss.
+Built as a backend-focused system during the Interswitch x Enyata Buildathon 2026, VendorGuard AI focuses on preventing financial fraud through structured API validation and secure transaction processing.
 
-Live Links
-- *Frontend (Live Demo):* https://e-i-buildathon.vercel.app/
-- *Backend Repository:* https://e-i-buildathon-production.up.railway.app
-- *API Endpoint:* https://e-i-buildathon-production.up.railway.app/api
+Backend Architecture Overview
+Receipt Upload → OCR Text Extraction
+Transaction Parsing → Validation Engine
+Session ID Verification → Fraud Check Layer
+Replay Attack Detection → Duplicate Transaction Blocking
+Secure Storage → Supabase with Row-Level Security
+ Core Backend Systems
+ Replay Attack Detection Engine
 
-## Problem Statement
+Prevents reuse of previously submitted transaction receipts by tracking unique session/transaction IDs.
 
-Digital merchants increasingly rely on **payment receipts and transaction confirmations**. However, fraudsters exploit this by:
+Session Validation Layer
 
-- Reusing valid receipts (**Replay Attacks**)  
-- Editing screenshots to fake successful payments  
-- Presenting manipulated transaction proofs  
+Validates transaction authenticity using structured Interswitch-compatible identifiers.
 
-This leads to **revenue leakage and trust issues** for businesses.
+Fraud Risk Processing
 
-## Solution
+Applies rule-based scoring to detect anomalies in receipt data.
 
-VendorGuard AI provides:
+Secure Data Layer
 
--  **Real-time receipt verification**
--  **OCR-powered text extraction**
--  **Session ID validation (Interswitch-compatible)**
--  **Replay attack detection**
--  **Secure transaction logging**
+Uses Supabase RLS to enforce strict access control at database level.
 
-## ⚙️ Core Features
+API Design
+POST /api/verify-receipt
+POST /api/session/validate
+GET /api/transactions
 
-- **Receipt Scanning & OCR Processing**  
-  Extracts transaction details from uploaded receipts  
+Tech Stack
 
-- **Session ID Verification Engine**  
-  Validates transaction authenticity using structured logic  
+Node.js | Express | Supabase (PostgreSQL) | OCR Engine | REST APIs | Typescript
 
-- **Replay Attack Detection**  
-  Flags duplicate or previously used transaction IDs  
+Team & Contributions
 
-- **Secure Data Layer (RLS Enabled)**  
-  Ensures row-level access control for transaction integrity  
+Backend Engineer / System Design (Afolabi Shyllon)
 
-- **RESTful API Architecture**  
-  Scalable and modular backend services  
+Designed and implemented the fraud detection backend system
+Built API architecture for receipt verification and session validation
+Developed replay attack detection logic
+Integrated Supabase with Row-Level Security (RLS)
+Structured backend services (controllers/services separation)
 
-## 🛠️ Tech Stack
+Frontend Engineer (Treasure Ejike)
 
-- **Backend:** Node.js, Express  
-- **Database:** Supabase (PostgreSQL)  
-- **Security:** Row-Level Security (RLS)  
-- **AI/OCR:** OCR Processing (Custom Logic)  
-- **Version Control:** Git & GitHub  
+Built user interface for receipt upload and results display
+Integrated backend APIs into frontend workflow
 
-## Key Engineering Decisions
+Data Analyst (Oluwabukunmi Odukoya)
 
-### 1. **Replay Attack Prevention**
-We implemented logic to:
-- Track unique transaction/session IDs  
-- Flag duplicates in real-time  
-- Prevent reuse across multiple submissions  
+Assisted in defining fraud detection rules and validation thresholds
 
-### 2. **Row-Level Security (RLS)**
-Used Supabase RLS to:
-- Protect sensitive transaction data  
-- Enforce strict access control  
-- Ensure high data integrity  
+Product Manager (Temiloluwa Madehinlo)
 
-### 3. **Scalable API Design**
-- Modular route structure  
-- Separation of concerns (controllers/services)  
-- Designed for future microservice extension  
-
-## 📈 Impact
-
--  Prevents fraudulent receipt reuse  
--  Enables real-time fraud detection  
--  Improves trust in digital transactions  
--  Protects merchants from financial loss
-  
-How to Run & Test
-1. *Clone the Repo:* `git clone https://github.com/Shyllon/E-I-Buildathon.git`
-2. *Install Dependencies:* `npm install`
-3. *Environment Variables:*
-   - Create a `.env` file in the frontend.
-   - Add `VITE_API_URL=https://e-i-buildathon-production.up.railway.app/api`.
-4. *Testing Fraud Detection:*
-   - *Test 1 (Verified):* Upload a new receipt with the correct amount.
-   - *Test 2 (Replay):* Upload the same receipt again. The system will trigger a `REPLAY_ATTACK_DETECTED` flag.
-   - *Test 3 (Tamper):* Enter an expected amount that does not match the receipt text.
-
-The Team
-- *Strategic Lead & Backend Engineer:* Afolabi Shyllon
-- *Frontend Lead:* Treasure Ejike
-- *Data Analyst:* Oluwabukunmi Odukoya
-- *Product Manager:* Temiloluwa Madehinlo
-
-   Future Improvements
-Integration with live payment provider APIs
-Machine learning-based fraud scoring
-Dashboard for fraud analytics
-Multi-currency and multi-provider support
-
-📌 Project Status
-
- MVP Completed
- Actively improving
-
- Acknowledgment
-
-Built during the Interswitch x Enyata Buildathon 2026, focused on solving real-world fintech fraud challenges. VendorGuard AI: Real-Time Fraud Prevention Scanner
-*Built for the Enyata x Interswitch Buildathon 2026*
-
-## 🔑 Demo Credentials (If Required)
-*No login required for the public demo. Simply navigate to the Scanner page.*
+Defined product requirements and user flow for fraud detection system
