@@ -1,60 +1,138 @@
-VendorGuard AI 
+🛡️ VendorGuard AI
+Real-Time Fraud Detection Backend System for Receipt Verification
 
-Real-time backend fraud detection system for validating payment receipts using OCR, session verification, and replay attack prevention.
+VendorGuard AI is a backend-focused fraud detection system designed to validate digital and physical payment receipts in real time. It prevents financial fraud through OCR-based extraction, session validation, replay attack detection, and structured risk evaluation.
 
-Built as a backend-focused system during the Interswitch x Enyata Buildathon 2026, VendorGuard AI focuses on preventing financial fraud through structured API validation and secure transaction processing.
+Built during the Interswitch x Enyata Buildathon 2026, the system demonstrates backend engineering principles in fraud prevention, secure API design, and data integrity enforcement.
 
-Backend Architecture Overview
-Receipt Upload → OCR Text Extraction
-Transaction Parsing → Validation Engine
-Session ID Verification → Fraud Check Layer
-Replay Attack Detection → Duplicate Transaction Blocking
-Secure Storage → Supabase with Row-Level Security
- Core Backend Systems
- Replay Attack Detection Engine
+🧠 System Architecture Overview
 
-Prevents reuse of previously submitted transaction receipts by tracking unique session/transaction IDs.
+VendorGuard AI is built as a layered backend validation pipeline:
 
-Session Validation Layer
+1. Receipt Submission Layer
 
-Validates transaction authenticity using structured Interswitch-compatible identifiers.
+Users submit receipts via API or frontend interface
 
-Fraud Risk Processing
+2. OCR Processing Layer
 
-Applies rule-based scoring to detect anomalies in receipt data.
+Extracts transaction data from uploaded receipt images
 
-Secure Data Layer
+3. Validation Engine
 
-Uses Supabase RLS to enforce strict access control at database level.
+Parses extracted data into structured transaction format
 
-API Design
-POST /api/verify-receipt
-POST /api/session/validate
-GET /api/transactions
+4. Session Verification Layer
 
-Tech Stack
+Validates transaction authenticity using session IDs (Interswitch-compatible logic)
 
-Node.js | Express | Supabase (PostgreSQL) | OCR Engine | REST APIs | Typescript
+5. Fraud Detection Layer
 
-Team & Contributions
+Detects replay attacks (duplicate or reused transactions)
+Applies rule-based fraud scoring
 
-Backend Engineer / System Design (Afolabi Shyllon)
+6. Persistence Layer
 
-Designed and implemented the fraud detection backend system
-Built API architecture for receipt verification and session validation
-Developed replay attack detection logic
+Stores verified transactions securely in Supabase (PostgreSQL)
+Enforced with Row-Level Security (RLS)
+⚙️ Core Backend Systems
+🔐 Replay Attack Detection Engine
+
+Prevents reuse of previously submitted receipts by tracking unique transaction/session identifiers in real time.
+
+🧾 Session Validation Service
+
+Validates transaction authenticity using structured session ID verification logic inspired by payment gateway systems.
+
+🛡️ Fraud Risk Evaluation Layer
+
+Implements rule-based logic to detect anomalies such as:
+
+Duplicate transactions
+Mismatched amounts
+Reused receipt data
+🗄️ Secure Data Architecture (RLS)
+
+Uses Supabase Row-Level Security to enforce:
+
+Strict access control policies
+Data isolation per transaction scope
+Protection against unauthorized reads/writes
+
+🌐 API Design (Backend Focus)
+
+RESTful API built using Node.js + Express:
+
+POST /api/verify-receipt → Validate receipt via OCR + fraud engine
+POST /api/session/validate → Validate transaction session integrity
+GET /api/transactions → Fetch verified transaction logs
+
+All endpoints follow a controller-service architecture pattern for scalability and separation of concerns.
+
+🧱 Backend Architecture Principles
+Modular service design (controllers / services separation)
+Stateless API design for scalability
+Rule-based fraud detection logic (extensible for ML integration)
+Secure database interactions via RLS policies
+Built for future microservice decomposition
+
+🛠️ Tech Stack
+Backend: Node.js, Express.js
+Database: Supabase (PostgreSQL)
+Security: Row-Level Security (RLS)
+OCR Processing: Image-to-text extraction engine
+Architecture: REST API, Modular backend services
+Version Control: Git & GitHub
+
+🚀 Live System
+🔗 Frontend Demo: https://e-i-buildathon.vercel.app/
+🔗 Backend API: https://e-i-buildathon-production.up.railway.app
+🔗 API Base: https://e-i-buildathon-production.up.railway.app/api
+
+📌 Engineering Highlights
+Designed a real-time fraud detection pipeline for receipt validation
+Implemented replay attack prevention using transaction state tracking
+Built secure backend APIs with structured validation layers
+Integrated database-level security using Supabase RLS
+Applied separation of concerns for maintainable backend architecture
+
+📊 Impact
+Prevents fraudulent receipt reuse in real time
+Reduces risk of financial manipulation in digital transactions
+Improves merchant trust through structured validation logic
+Demonstrates scalable backend system design under real constraints
+
+👥 Team & Contributions
+
+Backend Engineer / System Architect — Afolabi Shyllon
+
+Designed backend architecture for fraud detection pipeline
+Built REST APIs for receipt verification and session validation
+Implemented replay attack detection logic
 Integrated Supabase with Row-Level Security (RLS)
-Structured backend services (controllers/services separation)
+Structured backend into modular service architecture
 
-Frontend Engineer (Treasure Ejike)
+Frontend Engineer - Treasure Ejike
 
-Built user interface for receipt upload and results display
+Built user interface for receipt upload and verification results
 Integrated backend APIs into frontend workflow
 
-Data Analyst (Oluwabukunmi Odukoya)
+Data Analyst - Oluwabukunmi Odukoya
 
-Assisted in defining fraud detection rules and validation thresholds
+Defined fraud detection rules and validation thresholds
 
-Product Manager (Temiloluwa Madehinlo)
+Product Manager - Temiloluwa Madehinlo
 
-Defined product requirements and user flow for fraud detection system
+Defined product requirements and user flow
+
+📌 Project Status
+MVP Completed
+Actively Improving Backend Logic & System Design
+
+🧠 Final Positioning Statement
+
+VendorGuard AI is a backend fraud detection system demonstrating practical implementation of:
+
+API design
+transaction validation logic
+security-aware system architecture
+scalable backend structuring
